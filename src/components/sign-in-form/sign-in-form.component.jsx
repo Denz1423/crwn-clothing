@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
   signInAuthUserWithEmailAndPassword,
-  createUserDocumentFromAuth,
   signInWithGoogleRedirect,
   auth,
 } from "../../utils/firebase/firebase.utils";
@@ -34,9 +33,7 @@ export default function SignInForm() {
 
   async function googleRedirect() {
     const response = await getRedirectResult(auth);
-    if (response) {
-      await createUserDocumentFromAuth(response.user);
-    } else {
+    if (!response) {
       return;
     }
   }
@@ -46,6 +43,7 @@ export default function SignInForm() {
 
     try {
       await signInAuthUserWithEmailAndPassword(email, password);
+      // setCurrentUser(user);
       resetFormFields();
     } catch (error) {
       switch (error.code) {
