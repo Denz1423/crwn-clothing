@@ -6,7 +6,7 @@ import {
 } from "../../utils/firebase/firebase.utils";
 import { getRedirectResult } from "firebase/auth";
 import FormInput from "../form-input/form-input.component";
-import Button from "../button/button.component";
+import Button, {BUTTON_TYPE_CLASSES} from "../button/button.component";
 import "./sign-in-form.style.scss";
 
 const defaultFormFields = {
@@ -84,7 +84,7 @@ export default function SignInForm() {
           <Button type="submit">Sign In!</Button>
           <Button
             type="button"
-            buttonType="google"
+            buttonType={BUTTON_TYPE_CLASSES.google}
             onClick={signInWithGoogleRedirect}
           >
             Google sign in
