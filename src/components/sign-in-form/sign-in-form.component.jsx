@@ -7,7 +7,7 @@ import {
 } from "../../utils/firebase/firebase.utils";
 import { getRedirectResult } from "firebase/auth";
 import FormInput from "../form-input/form-input.component";
-import Button, {BUTTON_TYPE_CLASSES} from "../button/button.component";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import "./sign-in-form.style.scss";
 
 const defaultFormFields = {
@@ -21,8 +21,15 @@ export default function SignInForm() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    async function googleRedirect() {
+      const response = await getRedirectResult(auth);
+      if (!response) {
+        return;
+      }
+      navigate("/");
+    }
     googleRedirect();
-  }, []);
+  }, [navigate]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -33,19 +40,11 @@ export default function SignInForm() {
     setFormFields(defaultFormFields);
   };
 
-  async function googleRedirect() {
-    const response = await getRedirectResult(auth);
-    if (!response) {
-      return;
-    }
-  }
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
       await signInAuthUserWithEmailAndPassword(email, password);
-      // setCurrentUser(user);
       resetFormFields();
       navigate("/");
     } catch (error) {

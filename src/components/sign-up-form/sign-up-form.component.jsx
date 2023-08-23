@@ -41,8 +41,7 @@ export default function SignUpForm() {
       const { user } = await createAuthUserWithEmailAndPassword(
         email,
         password
-      );
-      // setCurrentUser(user);  
+      ); 
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
       navigate("/");
