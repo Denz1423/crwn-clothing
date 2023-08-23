@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   signInAuthUserWithEmailAndPassword,
   signInWithGoogleRedirect,
@@ -17,6 +18,7 @@ const defaultFormFields = {
 export default function SignInForm() {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
+  const navigate = useNavigate();
 
   useEffect(() => {
     googleRedirect();
@@ -45,6 +47,7 @@ export default function SignInForm() {
       await signInAuthUserWithEmailAndPassword(email, password);
       // setCurrentUser(user);
       resetFormFields();
+      navigate("/");
     } catch (error) {
       switch (error.code) {
         case "auth/wrong-password":
