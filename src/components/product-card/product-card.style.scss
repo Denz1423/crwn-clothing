@@ -43,7 +43,7 @@
         width: fit-content;
 
         &:hover{
-          img{
+          .img{
             opacity: unset;
           }
 
@@ -54,9 +54,6 @@
       }
     }
 
-    @media screen and (max-width:400px){
-      width: 80vw;
-    }
   
     .footer {
       width: 100%;
