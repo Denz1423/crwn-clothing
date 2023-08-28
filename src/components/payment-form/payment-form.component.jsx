@@ -65,8 +65,8 @@ export default function PaymentForm() {
   return (
     <PaymentFormContainer onSubmit={paymentHandler}>
       <FormContainer>
-        <h2>Card Payment:</h2>
-        <CardElement />
+        <h2 className="card-title">Card Payment:</h2>
+        <CardElement className="card-input"/>
         <PaymentButton isLoading={isProcessingPayment} buttonType={BUTTON_TYPE_CLASSES.inverted}>Pay now</PaymentButton>
       </FormContainer>
     </PaymentFormContainer>

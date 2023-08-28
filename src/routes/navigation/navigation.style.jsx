@@ -18,10 +18,10 @@ export const NavigationContainer = styled.div`
 export const LogoContainer = styled(Link)`
   height: 100%;
   width: 70px;
-  padding: 25px;
+  padding: 20px;
 
   @media screen and(max-width: 800px) {
-    width: 50px;
+    width: 800px;
     padding: 0px;
   }
 `;
@@ -34,7 +34,7 @@ export const NavLinks = styled.div`
   justify-content: flex-end;
 
   @media screen and(max-width: 800px) {
-    width: 80%;
+    width: 90%;
   }
 `;
 

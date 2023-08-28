@@ -7,6 +7,19 @@ export const PaymentFormContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 800px) {
+    .card-title{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-input{
+      width:300px;
+      display: block;
+      margin: 50px 0 30px 100px;
+    }
 `;
 
 export const FormContainer = styled.form`
@@ -17,4 +30,7 @@ export const FormContainer = styled.form`
 export const PaymentButton = styled(Button)`
   margin-left: auto;
   margin-top: 30px;
+
+  @media screen and (max-width: 800px) {
+    margin: 50px 0 0 160px;
 `;

@@ -11,12 +11,14 @@ The website can be viewed at [crwn-clothing](https://zesty-pastelito-a6761d.netl
 - Customer can add items to cart
 - Customer can access a checkout page where they can increase, decrease or remove a product
 - Customer can make payments using Stripe
+- View website from mobile 
 
 ## Motivation
 - Learn to build a full E-Commerce website
 - Learn React basics
 - Write reusable components
 - Experience technologies such as redux, firebase and stripe
+- Learn about Progressive Web Applications (PWA)
 
 ## Technologies used:
 - ReactJs
